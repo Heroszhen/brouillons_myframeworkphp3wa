@@ -10,6 +10,15 @@ nav a:hover{
     color: white;
 }
 
+nav a.navbar-brand, nav a.navbar-brand:hover{
+    color:white;
+}
+
 .undernav{
     margin-top:56px;
+}
+
+img{
+    width:100%;
+    height:auto;
 }
