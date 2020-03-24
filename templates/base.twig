@@ -13,8 +13,12 @@
     <title>My framework php</title>
   </head>
   <body>
-    
+    <div class="fixed-top">
+    {% include 'nav.twig' %}
+    </div>
+    <main class="undernav">
     {% block content %}{% endblock %}
+    </main>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

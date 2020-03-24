@@ -1,3 +1,15 @@
-* {
-    background:rgba(128, 128, 128, 0.096);
+nav{
+    background-color: #563d7c;
+    color: #cbbde2;
+}
+
+nav a{
+    color: #cbbde2;
+}
+nav a:hover{
+    color: white;
+}
+
+.undernav{
+    margin-top:56px;
 }
