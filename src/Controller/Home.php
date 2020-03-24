@@ -6,7 +6,7 @@ use App\Controller;
 
 class Home{
     public function index(){
-        return ["home.index.twig",[]];
+        return ["home.index.twig",["nav"=>"home"]];
     }
 
     public function myForm(){

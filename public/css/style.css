@@ -14,6 +14,10 @@ nav a.navbar-brand, nav a.navbar-brand:hover{
     color:white;
 }
 
+nav li.active a{
+    color:white;
+}
+
 .undernav{
     margin-top:56px;
 }
