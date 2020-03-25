@@ -1,0 +1,27 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div id="articlecreatearticle" class="container pt-4">
+    <div class="row justify-content-center">
+        <h2 class="col-12 text-center">Créer un article</h2>
+        <div class="col-md-7 col-lg-5">
+            <form method="POST" action="/creer_un_article">
+                <div>{{parameters['msgalert']|raw }}</div>
+                <div class="form-group">
+                    <label for="title">Titre</label>
+                    <input type="text" class="form-control" id="title" name="title"  placeholder="titre" value="{{parameters['post']['title']}}">
+                </div>
+                <div class="form-group">
+                    <label for="content">Texte</label>
+                    <textarea class="form-control" id="content" name="content" placeholder="texte" rows="3">{{parameters['post']['content']}}</textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+            </form>
+        </div>
+        <div class="col-12 mt-3 h4">
+            titre : {{parameters["post"]["title"]}}<br>
+            texte : {{parameters["post"]["content"]}}
+        </div>
+    </div>
+</doiv>
+{% endblock %}

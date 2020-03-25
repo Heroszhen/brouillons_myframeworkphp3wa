@@ -9,15 +9,18 @@
       <li class="nav-item {% if parameters['nav']=='home' %}active{% endif %}">
         <a class="nav-link" href="/">Accueil</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+      <li class="nav-item {% if parameters['nav']=='introduction' %}active{% endif %}">
+        <a class="nav-link" href="/introduction">Introduction</a>
+      </li>
+      <li class="nav-item {% if parameters['nav']=='articles' %}active{% endif %}">
+        <a class="nav-link" href="/articles">Articles</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+        <a class="nav-link dropdown-toggle {% if parameters['nav']=='create' %}active{% endif %}" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Création
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item {% if parameters['nav']=='create' %}active{% endif %}" href="/creer_un_article">Créer un article</a>
           <a class="dropdown-item" href="#">Another action</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>

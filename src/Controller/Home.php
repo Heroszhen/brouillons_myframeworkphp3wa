@@ -2,11 +2,11 @@
 
 namespace App\Controller;
 
-use App\Controller;
+class Home extends AbstractController{
 
-class Home{
     public function index(){
-        return ["home.index.twig",["nav"=>"home"]];
+        $this->render("home.index.twig",["nav"=>"home"]);
+        //return ["home.index.twig",["nav"=>"home"]];
     }
 
     public function myForm(){
@@ -19,5 +19,9 @@ class Home{
         $form .= "<button type='submit' class='btn btn-primary'>Envoyer</button>";
         $form .= "</form></div></div>";
         echo $form;
+    }
+
+    public function Introduction(){
+        $this->render("home.introduction.twig",["nav"=>"introduction"]);
     }
 }

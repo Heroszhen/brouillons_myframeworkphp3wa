@@ -18,6 +18,10 @@ nav li.active a{
     color:white;
 }
 
+nav .dropdown a.active{
+    color:white;
+}
+
 .undernav{
     margin-top:56px;
 }
