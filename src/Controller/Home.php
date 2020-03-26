@@ -5,7 +5,7 @@ namespace App\Controller;
 class Home extends AbstractController{
 
     public function index(){
-        $this->render("home.index.twig",["nav"=>"home"]);
+        $this->render("home.index.twig",["nav"=>"home","session"=>$_SESSION]);
         //return ["home.index.twig",["nav"=>"home"]];
     }
 
@@ -22,6 +22,6 @@ class Home extends AbstractController{
     }
 
     public function Introduction(){
-        $this->render("home.introduction.twig",["nav"=>"introduction"]);
+        $this->render("home.introduction.twig",["nav"=>"introduction","session"=>$_SESSION]);
     }
 }

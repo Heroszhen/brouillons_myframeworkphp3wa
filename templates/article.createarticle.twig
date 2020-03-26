@@ -8,20 +8,31 @@
             <form method="POST" action="/creer_un_article">
                 <div>{{parameters['msgalert']|raw }}</div>
                 <div class="form-group">
-                    <label for="title">Titre</label>
-                    <input type="text" class="form-control" id="title" name="title"  placeholder="titre" value="{{parameters['post']['title']}}">
+                    <label for="articletitle">Titre</label>
+                    <input type="text" class="form-control" id="articletitle" name="articletitle"  placeholder="titre" value="{{parameters['post']['articletitle']}}">
                 </div>
                 <div class="form-group">
-                    <label for="content">Texte</label>
-                    <textarea class="form-control" id="content" name="content" placeholder="texte" rows="3">{{parameters['post']['content']}}</textarea>
+                    <label for="articlecontent">Texte</label>
+                    <textarea class="form-control ckeditor" id="articlecontent" name="articlecontent" placeholder="texte" rows="3">{{parameters['post']['articlecontent']}}</textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Envoyer</button>
             </form>
         </div>
         <div class="col-12 mt-3 h4">
-            titre : {{parameters["post"]["title"]}}<br>
-            texte : {{parameters["post"]["content"]}}
+            titre : {{parameters["post"]["articletitle"]}}<br>
+            texte : {{parameters["post"]["articlecontent"]}}
         </div>
     </div>
 </doiv>
+{% endblock %}
+
+{%  block javascripts  %}
+    {{ parent() }}
+    <script src="/js/ckeditorbasic/adapters/jquery.js"></script>
+    <script src="/js/ckeditorbasic/ckeditor.js"></script>
+    <script>
+        $(function() {
+            $('textarea').ckeditor();
+        });
+    </script>
 {% endblock %}

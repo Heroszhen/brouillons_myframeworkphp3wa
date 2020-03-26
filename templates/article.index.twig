@@ -1,8 +1,26 @@
 {% extends "base.twig" %}
 
 {% block content %}
-<div id="articleindex" class="container">
-    <div class="row">
+<div id="articleindex">
+    <div id="img" class="mb-3">
+        <img src="https://tel.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2FTEL.2Enews.2F2018.2F01.2F11.2F9e40abf0-0189-46d3-a07f-9e0defd1a008.2Ejpeg/1150x438/crop-from/top/quality/80/alerte-a-malibu-le-film-alexandra-daddario-enfilera-le-celebre-maillot-de-bain-rouge.jpg" alt="">
     </div>
-</doiv>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8">
+            {% for one in parameters["articles"] %}
+                <div class="mb-4 onearticle">
+                    <a href="#">
+                        <h2 class="font-weight-bold">{{one.title}}</h2>
+                    </a>
+                    <small>
+                        {{one.created|date('d/m/Y h:i:s')}}
+                    </small>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </doiv>
+</div>
+
 {% endblock %}

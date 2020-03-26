@@ -5,6 +5,7 @@ namespace Frameworkphp3wa;
 require_once Dirname(Dirname(__DIR__))."/vendor/autoload.php";
 
 use Frameworkphp3wa\Router;
+use Frameworkphp3wa\Database\ConnectMysql;
 use Twig;
 
 class Kernel{
@@ -21,5 +22,9 @@ class Kernel{
         $router = new Router();
         $dispatcher = $router->setRoutes($twig);
         $router->getRouter($twig,$dispatcher);
+    }
+
+    public function getPDO(){
+        return ConnectMysql::getPDO();
     }
 }

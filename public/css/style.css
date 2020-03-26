@@ -1,3 +1,6 @@
+a:hover{
+    text-decoration: none;
+}
 nav{
     background-color: #563d7c;
     color: #cbbde2;
@@ -18,12 +21,22 @@ nav li.active a{
     color:white;
 }
 
-nav .dropdown a.active{
+nav .dropdown a.active, nav a.active{
     color:white;
 }
 
 .undernav{
     margin-top:56px;
+}
+main{
+    min-height:calc(100vh - 120px);
+}
+footer{
+    background-color:black;
+    color:white;
+    padding-top:20px;
+    padding-bottom:20px;
+    font-family: 'Pacifico', cursive;
 }
 
 img{
@@ -48,4 +61,16 @@ img{
 #bigimg img{
     height:100%;
     width:auto;
+}
+
+/*article index*/
+#articleindex .onearticle{
+    padding-bottom:10px;
+    border-bottom: 1px solid gray;
+}
+#articleindex .onearticle a{
+    color:black;
+}
+#articleindex .onearticle a:hover{
+    text-decoration: none;
 }
