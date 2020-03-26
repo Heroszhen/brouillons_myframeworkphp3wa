@@ -10,10 +10,11 @@ class ConnectMysql{
 
     public static function getPDO(){
         if (self::$pdo === null) {
+            $config = include dirname(dirname(dirname(__DIR__))).'/app/config.php';
             $pdo = new PDO(
-                'mysql:host=127.0.0.1:8889;dbname=frameworkphp3wa',
-                'root',
-                'root',
+                'mysql:host='.$config["host"].';dbname='.$config["dbname"],
+                $config["username"],
+                $config["password"],
                 array(
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING,
                     PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',

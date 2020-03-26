@@ -5,12 +5,6 @@ namespace App\Repository;
 use App\Entity\User;
 
 class UserRepository extends AbstractRepository{
-    private $pdo;
-
-    public function __construct(){
-        $tab = include dirname(dirname(__DIR__)).'/app/config.php';
-        $this->pdo = $tab["pdo"];
-    }
 
     public function findAll(){
 

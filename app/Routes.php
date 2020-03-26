@@ -21,4 +21,5 @@ return function(RouteCollector $r) {
     $r->addRoute('GET','/connexion',array(new UserController($_GET["twig"]), "login",[]));
     $r->addRoute('POST', '/connexion',array(new UserController($_GET["twig"]), "login",[$_POST]));
     $r->addRoute('GET', '/deconnexion',array(new UserController($_GET["twig"]), "logout",[]));
+    $r->addRoute('GET', '/article/{id:\d+}',array(new ArticleController($_GET["twig"]), "showOneArticle",[$_SERVER['REQUEST_URI']]));
 };

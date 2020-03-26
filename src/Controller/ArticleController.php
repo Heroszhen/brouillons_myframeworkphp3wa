@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Repository\ArticleRepository;
-use APP\Service\Service1 as s1;
+use App\Service\Service1 as s1;
 
 class ArticleController extends AbstractController{
     public function index(){
@@ -37,5 +37,12 @@ class ArticleController extends AbstractController{
             } 
         }
         $this->render("article.createarticle.twig",["nav"=>"create","post"=>$post,"msgalert"=>$msgalert,"session"=>$_SESSION]);
+    }
+
+    public function showOneArticle($uri){
+        $tab = explode('/',$uri);
+        $rp = new ArticleRepository("article");
+        $article = $rp->findBy(["id"=>$tab[2]]);
+        $this->render("article.one.twig",["nav"=>"articles","article"=>$article,"session"=>$_SESSION]);
     }
 }

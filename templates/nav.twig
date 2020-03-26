@@ -29,13 +29,14 @@
       </li>
       {% endif %}
     </ul>
+    <div>
+    {% if parameters["session"]["user"] is defined %}
+      <a class="{% if parameters['nav']=='logout' %}active{% endif %}" href="/deconnexion">Déconnexion</a>
+    {% else %}
+      <a class="{% if parameters['nav']=='login' %}active{% endif %}" href="/connexion">Connexion</a>
+      <a class="{% if parameters['nav']=='logup' %}active{% endif %}" href="/inscription">Inscription</a>
+      {% endif %}
+    </div>
   </div>
-  <div>
-  {% if parameters["session"]["user"] is defined %}
-    <a class="{% if parameters['nav']=='logout' %}active{% endif %}" href="/deconnexion">Déconnexion</a>
-  {% else %}
-    <a class="{% if parameters['nav']=='login' %}active{% endif %}" href="/connexion">Connexion</a>
-    <a class="{% if parameters['nav']=='logup' %}active{% endif %}" href="/inscription">Inscription</a>
-    {% endif %}
-  </div>
+  
 </nav>

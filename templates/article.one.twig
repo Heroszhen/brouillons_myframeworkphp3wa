@@ -1,0 +1,17 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div id="showonearticle">
+    <div class="container">
+        <div class="row justify-content-center">
+            <h1 class="col-12 mb-4 text-center">{{parameters["article"]["title"]}}</h1>
+            <div class="col-12 col-md-8 col-lg-8 mb-3">
+                {{parameters["article"]["content"]|raw}}
+                <div class="text-right">
+                    {{parameters["article"]["created"]|date('d/m/Y h:i:s')}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

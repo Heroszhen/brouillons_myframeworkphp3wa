@@ -5,12 +5,11 @@ namespace App\Repository;
 use App\Entity\Article;
 
 class ArticleRepository extends AbstractRepository{
-    private $pdo;
-
+    /*
     public function __construct(){
         $tab = include dirname(dirname(__DIR__)).'/app/config.php';
         $this->pdo = $tab["pdo"];
-    }
+    }*/
 
     /**
      *
@@ -26,6 +25,20 @@ class ArticleRepository extends AbstractRepository{
         }
         $result = $this->pdo->query($req);
         return $result->fetchAll();
+    }
+
+    /**
+     *
+     * array conditions : ["id"=>1]
+     * @return array
+     */
+    public function findBy(array $conditions = []){
+        $req = "SELECT * FROM article";
+        foreach($conditions as $k=>$v){
+            $req .= " where ".$k." = ".$v;
+        }
+        $result = $this->pdo->query($req);
+        return $result->fetch();
     }
 
     public function persist(Article $article){
