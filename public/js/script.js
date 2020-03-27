@@ -32,3 +32,10 @@ $("#categorycreatecategory table").on("click","button.deletecategory",function()
         }
     );
 });
+
+$("#articlecreatearticle .pagination select option").click(function(){
+    let index = $(this).val();
+    $(".page").addClass("hidden");
+    $("tr[data-page='"+index+"']").removeClass("hidden");
+    $('html, body').animate({scrollTop:$(document).height()}, 'fast');
+});

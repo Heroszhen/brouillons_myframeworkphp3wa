@@ -43,11 +43,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                {% set n = 1 %}
+                {% set n = 0 %}
                 {% for one in parameters["allarticles"] %}
                     {% set rest = n % 5  %} 
                     {% set quotient = (n - rest) / 5  %}
-                    <tr class="page" data-page="{{ quotient }}">
+                    <tr class="page {% if quotient != 0 %}hidden{% endif %}" data-page="{{ quotient }}">
                         <td>{{ one.id }}</td>
                         <td>{{ one.title }}</td>
                         <td>{{ one.created|date('d/m/Y h:i:s') }}</td>

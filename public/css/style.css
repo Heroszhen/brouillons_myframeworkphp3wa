@@ -63,6 +63,13 @@ img{
     width:auto;
 }
 
+.hidden{
+    display:none;
+}
+.shown{
+    display:block;
+}
+
 /*article index*/
 #articleindex .onearticle{
     padding-bottom:10px;
