@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Article;
+use Frameworkphp3wa\Repository\AbstractRepository;
 
 class ArticleRepository extends AbstractRepository{
     /*

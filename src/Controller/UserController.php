@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Repository\UserRepository;
+use Frameworkphp3wa\Controller\AbstractController;
 
 class UserController extends AbstractController{
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace Frameworkphp3wa\Controller;
 
 use App\Entity\Article;
 use Twig\Environment as Twig;

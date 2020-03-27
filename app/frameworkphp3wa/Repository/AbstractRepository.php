@@ -1,5 +1,5 @@
 <?php
-namespace App\Repository;
+namespace Frameworkphp3wa\Repository;
 
 use Frameworkphp3wa\Kernel;
 

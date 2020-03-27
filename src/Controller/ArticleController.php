@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Repository\ArticleRepository;
+use Frameworkphp3wa\Controller\AbstractController;
 use App\Service\Service1 as s1;
 
 class ArticleController extends AbstractController{
