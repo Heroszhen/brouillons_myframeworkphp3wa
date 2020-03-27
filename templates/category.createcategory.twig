@@ -1,0 +1,51 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div id="categorycreatecategory" class="container pt-4">
+    <div class="row justify-content-center">
+        <h2 class="col-12 text-center">Créer une catégorie</h2>
+        <div class="col-md-9 col-lg-7">
+            <form method="POST" action="/creerunecategory">
+                <div>{{parameters['msgalert']|raw }}</div>
+                <div class="form-group">
+                    <label for="categorytitle">Titre</label>
+                    <input type="text" class="form-control" id="categorytitle" name="categorytitle"  placeholder="titre" value="{{parameters['post']['categorytitle']}}">
+                </div>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+            </form>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <h3 class="col-12 text-center">
+            Toutes les catégorie
+        </h3>
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Titre</th>
+                    <th scope="col">Date de création</th>
+                    <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for one in parameters["all"] %}
+                    <tr>
+                        <td>{{ one.id }}</td>
+                        <td>{{ one.title }}</td>
+                        <td>{{ one.created|date('d/m/Y h:i:s') }}</td>
+                        <td>
+                            <div class="d-flex">
+                                <a class="btn btn-info btn-sm mr-2" data-id="{{ one.id }}" href="/modifierunecategorie/{{ one.id }}">Modifier</a>
+                                <button type="button" class="btn btn-danger btn-sm deletecategory" data-id="{{ one.id }}">Supprimer</button>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

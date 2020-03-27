@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div id="categorycreatecategory" class="container pt-4">
+    <div class="row justify-content-center">
+        <h2 class="col-12 text-center">Créer un article</h2>
+        <div class="col-md-9 col-lg-7">
+            <form method="POST" action="/modifierunecategorie/{{ parameters['id'] }}">
+                <div>{{parameters['msgalert']|raw }}</div>
+                <div class="form-group">
+                    <label for="categorytitle">Titre</label>
+                    <input type="text" class="form-control" id="categorytitle" name="categorytitle"  placeholder="titre" value="{{ parameters['post']['categorytitle'] }}">
+                </div>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
