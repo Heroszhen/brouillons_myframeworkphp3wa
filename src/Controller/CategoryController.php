@@ -82,6 +82,7 @@ class CategoryController extends AbstractController{
             "nav"=>"create",
             "id"=>$category["id"],
             "post"=>$post,
+            "msgalert" => $msgalert,
             "session"=>$_SESSION
         ]);
     }
