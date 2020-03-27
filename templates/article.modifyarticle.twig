@@ -1,0 +1,43 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div id="articlecreatearticle" class="container pt-4 pb-2">
+    <div class="row justify-content-center">
+        <h2 class="col-12 text-center">Modifier un article</h2>
+        <div class="col-md-9 col-lg-7">
+            <form method="POST" action="/modifierunarticle/{{ parameters.id }}">
+                <div>{{parameters['msgalert']|raw }}</div>
+                <div class="form-group">
+                    <label for="articletitle">Titre</label>
+                    <input type="text" class="form-control" id="articletitle" name="articletitle"  placeholder="titre" value="{{parameters['post']['articletitle']}}">
+                </div>
+                <div class="form-group">
+                    <label for="categoryid">Sélectionnez une catégorie</label>
+                    <select class="form-control" id="articlecategoryid" name="articlecategoryid" value="{{ parameters['post']['articlecategoryid'] }}">
+                        <option value=""></option>
+                    {% for one in parameters.allcategory %}
+                        <option value="{{ one['id'] }}" {% if parameters['post']['articlecategoryid'] == one['id'] %}selected{% endif %}>{{ one['title'] }}</option>
+                    {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="articlecontent">Texte</label>
+                    <textarea class="form-control ckeditor" id="articlecontent" name="articlecontent" placeholder="texte" rows="3">{{parameters['post']['articlecontent']}}</textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+            </form>
+        </div>
+    </div>
+</doiv>
+{% endblock %}
+
+{%  block javascripts  %}
+    {{ parent() }}
+    <script src="/js/ckeditorbasic/adapters/jquery.js"></script>
+    <script src="/js/ckeditorbasic/ckeditor.js"></script>
+    <script>
+        $(function() {
+            $('textarea').ckeditor();
+        });
+    </script>
+{% endblock %}

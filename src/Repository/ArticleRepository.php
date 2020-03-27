@@ -43,12 +43,30 @@ class ArticleRepository extends AbstractRepository{
     }
 
     public function persist(Article $article){
-        $req = "INSERT INTO article (title,content) VALUES (:title,:content)";
-        $params = [
-            "title"=>$article->getTitle(),
-            "content"=>$article->getContent()
-        ];
+        if($article->getId() == -1){
+            $req = "INSERT INTO article (title,content,categoryid) VALUES (:title,:content, :categoryid)";
+            $params = [
+                "title"=>$article->getTitle(),
+                "content"=>$article->getContent(),
+                "categoryid"=>$article->getCategoryid()
+            ];
+        }else{
+            $req = "UPDATE article SET title = :title , content = :content, categoryid = :categoryid WHERE id = :id";
+            $params = [
+                "title"=>$article->getTitle(),
+                "content"=>$article->getContent(),
+                "categoryid"=>$article->getCategoryid(),
+                "id" => $article->getId()
+            ];
+        }
+        
+        
         $r = $this->pdo->prepare($req);
         $r->execute($params);
+    }
+
+    public function remove($id){
+        $req = "DELETE FROM article WHERE id = ".$id;
+        $this->pdo->query($req);
     }
 }

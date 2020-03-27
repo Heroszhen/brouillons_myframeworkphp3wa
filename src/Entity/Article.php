@@ -6,11 +6,17 @@ class Article{
     private $id;
     private $title;
     private $content;
+    private $categoryid;
     private $created;
 
     public function getId(): int
     {
-        return $this->id();
+        return $this->id;
+    }
+    public function setId(int $id): self
+    {
+        $this->id = $id;
+        return $this;
     }
     public function getTitle(): string
     {
@@ -30,7 +36,15 @@ class Article{
         $this->content = $content;
         return $this;
     }
-
+    public function getCategoryid()
+    {
+        return $this->categoryid;
+    }
+    public function setCategoryid($categoryid): self
+    {
+        $this->categoryid = $categoryid;
+        return $this;
+    }
     public function getCreated(): DateTime
     {
         return $this->content;
